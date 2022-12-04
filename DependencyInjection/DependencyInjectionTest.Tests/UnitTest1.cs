@@ -12,6 +12,9 @@ namespace DependencyInjectionTest.Tests
         {
             var product = new ModuleA(new ProductMock());
             Assert.AreEqual("AAA%", product.GetValue());
+
+            var product2 = new ModuleA(new ProductMock2());
+            Assert.AreEqual("AAABB", product2.GetValue());
         }
     }
 
@@ -20,6 +23,19 @@ namespace DependencyInjectionTest.Tests
         public string GetData()
         {
             return "AAA";
+        }
+
+        public void Save(string value)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    internal sealed class ProductMock2 : IProduct
+    {
+        public string GetData()
+        {
+            return "AAABB";
         }
 
         public void Save(string value)
