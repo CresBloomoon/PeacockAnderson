@@ -1,5 +1,6 @@
 ﻿using DependencyInjection.WinForm.Objects;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System;
 
 namespace DependencyInjectionTest.Tests
@@ -15,6 +16,21 @@ namespace DependencyInjectionTest.Tests
 
             var product2 = new ModuleA(new ProductMock2());
             Assert.AreEqual("AAABB", product2.GetValue());
+        }
+
+        [TestMethod]
+        public void Moqを使ったテスト()
+        {
+            var productMock = new Mock<IProduct>();
+            var m = new ModuleA(productMock.Object);
+
+            productMock.Setup(x => x.GetData()).Returns("AAA");
+            Assert.AreEqual("AAA%", m.GetValue());
+
+            productMock.Setup(x => x.GetData()).Returns("BBBCC");
+            Assert.AreEqual("BBBCC", m.GetValue());
+
+
         }
     }
 
