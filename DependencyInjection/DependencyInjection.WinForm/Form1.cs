@@ -13,7 +13,7 @@ namespace DependencyInjection.WinForm
 {
     public partial class Form1 : Form
     {
-        private ProductSqlServer _product = new ProductSqlServer();
+        private IProduct _product = new ProductSqlServer();
 
         public Form1()
         {
