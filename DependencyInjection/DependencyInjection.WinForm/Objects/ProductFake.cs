@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace DependencyInjection.WinForm.Objects
 {
-    public sealed class ProductSqlServer : IProduct
+    public sealed class ProductFake : IProduct
     {
         public string GetData()
         {
-            ///データベースOpen
-            ///SQLの実行
-            return "AAA sql server";
+            return "Fake";
         }
 
         public void Save(string value)
