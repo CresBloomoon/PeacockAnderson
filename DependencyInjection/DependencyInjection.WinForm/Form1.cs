@@ -25,5 +25,10 @@ namespace DependencyInjection.WinForm
         {
             button1.Text = _product.GetData();
         }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            _product.Save("aaa");
+        }
     }
 }

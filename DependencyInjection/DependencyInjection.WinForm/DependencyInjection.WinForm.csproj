@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Objects\Factories.cs" />
     <Compile Include="Objects\IProduct.cs" />
+    <Compile Include="Objects\ProductFake.cs" />
     <Compile Include="Objects\ProductSqlServer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
