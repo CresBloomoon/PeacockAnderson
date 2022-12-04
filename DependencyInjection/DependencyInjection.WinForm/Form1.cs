@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DependencyInjection.WinForm.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,17 @@ namespace DependencyInjection.WinForm
 {
     public partial class Form1 : Form
     {
+        private ProductSqlServer _product = new ProductSqlServer();
+
         public Form1()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            button1.Text = _product.GetData();
         }
     }
 }
