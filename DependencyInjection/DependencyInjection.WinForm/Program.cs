@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DependencyInjection.WinForm.Objects;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace DependencyInjection.WinForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1(Factories.CreateProduct()));
         }
     }
 }

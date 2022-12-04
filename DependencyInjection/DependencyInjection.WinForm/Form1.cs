@@ -13,10 +13,11 @@ namespace DependencyInjection.WinForm
 {
     public partial class Form1 : Form
     {
-        private IProduct _product = Factories.CreateProduct();
+        private IProduct _product;
 
-        public Form1()
+        public Form1(IProduct product)
         {
+            _product = product;
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
         }
